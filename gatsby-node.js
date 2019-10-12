@@ -18,6 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
           edges {
             node {
               id
+              slug
             }
           }
         }
@@ -34,9 +35,9 @@ exports.createPages = ({ graphql, actions }) => {
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
-
+ 
       createPage({
-        path: `/posts/${post.node.id}/`,
+        path: `/posts/${post.node.slug}/`,
         component: blogPost,
         context: {
           id: post.node.id,
@@ -47,9 +48,3 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 }
-/*
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-  console.log(node.internal.type)
-}
-*/

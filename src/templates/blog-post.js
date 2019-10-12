@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import { rhythm, scale } from '../utils/typography'
 
 
 class BlogPostTemplate extends React.Component {
@@ -11,30 +10,18 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-          
+      <Layout>
         <h1>{post.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.date}
-        </p>
+        <div>
+          {post.createdDate}
+        </div>
         <div
             dangerouslySetInnerHTML={{
               __html: post.postBody.childMarkdownRemark.html,
             }}
           />
           <div></div>
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <hr/>
       </Layout>
     )
   }
@@ -53,6 +40,7 @@ export const pageQuery = graphql`
     contentfulBlogPost(id: { eq: $id }) {
       id
       title
+      slug
       createdDate
       postBody {
         childMarkdownRemark {
