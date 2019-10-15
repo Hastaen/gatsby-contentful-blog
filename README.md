@@ -4,30 +4,100 @@ This is a boilerplater setup for a simple blog. The stack is GatsbyJS and Conten
 
 ## Setup
 
-Node installed
-Gatsby-CLI : npm install --global gatsby-cli
-Surge.sh: npm install --global surge
-npm install project dependencies
+
+Latest Node installed. It is a good idea to use NVM but not mandatory.
+
+`npm install --global gatsby-cli`
+
+`npm install --global surge`
+
+`npm install`
 
 Create a free account at [Contentful](https://www.contentful.com/get-started/).
 
 Then in your space create a content model called BlogPost. This field will need 4 fields to start with.
 
-title - Will be the title of the post
-slug - Name for the route to be used on the site
-createdDate - It's a date :). Needed to sort blog post. 
-postBody - The post it self. Should be set up as "long text" and Appearence should be set to Markdown
+- title - Will be the title of the post
+- slug - Name for the route to be used on the site(should not contain white space)
+- createdDate - It's a date :). Needed to sort blog post. 
+- postBody - The post it self. Should be set up as "long text" and Appearence should be set to Markdown
 
-Then go to Settings -> API keys -> Copy both Space ID and Content Delivery API - access token. Place them in the file gatsby-config.js.
+Then go to Settings -> API keys -> Copy both Space ID and Content Delivery API - access token. 
 
+Create a file called `.env` 
 
-## Getting started
+Add the following:
+
+CONTENTFUL_SPACE_ID='YOUR-PERSONAL-SPACE-ID'
+
+CONTENTFUL_DELIVER_API_TOKEN='YOUR-PERSONAL-DELIVERY-TOKEN'
+
+Now create a real blog post!
+
+## Running the project
 
 cmd: gatsby develop
 
 -> Will start the devserver with HMR and GraphQL playouground.
-This will fail the first time. In order to get the 
 
+You can reach your site at: http://localhost:8000
+
+You can reach your GraphQl playground at: http://localhost:8000/___graphql
+
+## 💫 Deploy
+
+We will deploy the blog to Surge.sh. In order to do so we will first run gatsby build which will put the static site under /public. Navigate in your terminal to the public folder.
+
+Watch this [mini-tutorial](https://surge.sh/help/getting-started-with-surge)
+
+So when standing in /public run the command surge. Enter your information and give your domain a name. After completing the setup the surge-cli tool will make your site live. Now send a mail to your mom, tell her you have quit your job as an IT-consultant in order to become a full time influencer. 
+
+## Further assigments
+
+
+So now we have something running. But in order to get to know the stack better I have some assignments waiting.
+
+
+# Contentful
+
+
+- Update your content model with a list field. You have decided that you want to list a couple of links at the bottom of every blog post. When doing this you will have to make changes in the blog-post template, the gatsby-node build step and the model in contentful. Start with the model and use the GraphQl playground in order to see what you can query.
+
+- The contentful plugin has the ability to cache content and assets. This means that you can still build your project without having a network connection. Perhaps not the latest content but perfect for the days when you are stuck in a train deep beneath the earth. Before the Battle Royal starts you can always get some work done. Look att the documentation and try it out for your self. [DOCS](https://www.gatsbyjs.org/packages/gatsby-source-contentful/)
+
+- Right now you are getting published content. Look at the docs of the gatsby-source-contentful plugin and switch to the preview API! [DOCS](https://www.gatsbyjs.org/packages/gatsby-source-contentful/)
+
+
+# Styling
+
+- Does your blog look boring. GatsbyJs has suport for different CSS approaches. Read more in the [DOCS](https://www.gatsbyjs.org/docs/styling/). Then style your blog!
+
+
+# Gatsby
+
+- If you want to be a world class inluencer you have got to work with SEO. Add some basic SEO by follwing this [tutorial](https://www.gatsbyjs.org/docs/add-seo-component/).
+
+- Sourcing from the local filesystem. Right now we are using data from Contentful, if one would like to use markdown files that resides locally follow this [guide](). 
+
+# Working with images
+
+So GatsbyJS and contentful has a lot of options when working with images. Add an image to every blog post and render it in the blog-post template.
+
+To do this you will have to add an image to your Contentful Space Assets.
+
+You will have to read the Gatsby [docs]() for using images.
+
+You will have to update the GraphQl queries and the template view.
+
+_This is the assignment which will take the longest time to complete. One suggestion would be to start with the first Contentful assignment._
+
+## Final words
+
+The Gatsby site has a lot of documentation. This workshop has been based on something called a _starter_. There are many more starters available. The _starters_ are mini repos designed for you to get up to speed quickly.  so if blogging is not your thing take a looke here.
+
+Gatsby har a lot of plugins for handling various things. Take a look at the [marketplace](https://www.gatsbyjs.org/starters/?).
+
+You can also create your own plugin if you think that something can be solved in a better way. Take a look at plugin [marketplace](https://www.gatsbyjs.org/plugins/).
 
 ## Description of folder and files that GatsbyJS uses:
 
@@ -77,7 +147,3 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
-## 💫 Deploy
-
-
-Surge
