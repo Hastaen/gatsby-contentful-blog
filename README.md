@@ -61,7 +61,7 @@ So now we have something running. But in order to get to know the stack better I
 # Contentful
 
 
-- Update your content model with a list field. You have decided that you want to list a couple of links at the bottom of every blog post. When doing this you will have to make changes in the blog-post template, the gatsby-node build step and the model in contentful. Start with the model and use the GraphQl playground in order to see what you can query.
+- Update your content model with a list field. You have decided that you want to list a couple of links at the bottom of every blog post. When doing this you will have to make changes in the blog-post template, the and the model in contentful. Start with the model and use the GraphQl playground in order to see what you can query.
 
 - The contentful plugin has the ability to cache content and assets. This means that you can still build your project without having a network connection. Perhaps not the latest content but perfect for the days when you are stuck in a train deep beneath the earth. Before the Battle Royal starts you can always get some work done. Look att the documentation and try it out for your self. [DOCS](https://www.gatsbyjs.org/packages/gatsby-source-contentful/)
 
@@ -77,27 +77,17 @@ So now we have something running. But in order to get to know the stack better I
 
 - If you want to be a world class inluencer you have got to work with SEO. Add some basic SEO by follwing this [tutorial](https://www.gatsbyjs.org/docs/add-seo-component/).
 
-- Sourcing from the local filesystem. Right now we are using data from Contentful, if one would like to use markdown files that resides locally follow this [guide](). 
+- Build a footer component that can be used through out the site. 
 
-# Working with images
+- Sourcing from the local filesystem. Right now we are using data from Contentful mainly. Lets query a JSON file using the filesystem plugin. I have prepared a file in the project. In the _data_ folder there is a json file _contact.json_. In order to be able to query it you have to add another dependency to project in the form of a gatsby [transformer](https://www.gatsbyjs.org/tutorial/part-six/) called [gatsby-transformer-json](https://www.gatsbyjs.org/packages/gatsby-transformer-json/). You also have to add it to your gatsby-config file. The last step is to set up new entry point for filesystem queries. Rights now we can only query files in the images folder. Retrieve the email and put it in your about page. Use the docs and the GraphQl playground in order to find out how the query should be structured.  
 
-So GatsbyJS and contentful has a lot of options when working with images. Add an image to every blog post and render it in the blog-post template.
-
-To do this you will have to add an image to your Contentful Space Assets.
-
-You will have to read the Gatsby [docs]() for using images.
-
-You will have to update the GraphQl queries and the template view.
-
-_This is the assignment which will take the longest time to complete. One suggestion would be to start with the first Contentful assignment._
+- Change the image on the index site to something you like. If you want to learn more about the gatsby-image API read the [DOCS](https://www.gatsbyjs.org/packages/gatsby-image/). Try changing the image from _fluid_ to _fixed_.
 
 ## Final words
 
-The Gatsby site has a lot of documentation. This workshop has been based on something called a _starter_. There are many more starters available. The _starters_ are mini repos designed for you to get up to speed quickly.  so if blogging is not your thing take a looke here.
+The Gatsby site has a lot of documentation. This workshop has been based on something called a _starter_. There are many more starters available. The _starters_ are mini repos designed for you to get up to speed quickly.  so if blogging is not your thing take a looke [here](https://www.gatsbyjs.org/plugins/?).
 
 Gatsby har a lot of plugins for handling various things. Take a look at the [marketplace](https://www.gatsbyjs.org/starters/?).
-
-You can also create your own plugin if you think that something can be solved in a better way. Take a look at plugin [marketplace](https://www.gatsbyjs.org/plugins/).
 
 ## Description of folder and files that GatsbyJS uses:
 

@@ -1,14 +1,12 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.contentfulBlogPost
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
-
+  
     return (
       <Layout>
         <h1>{post.title}</h1>
