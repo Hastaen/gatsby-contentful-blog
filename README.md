@@ -75,11 +75,11 @@ So now we have something running. But in order to get to know the stack better I
 
 # Gatsby
 
-- If you want to be a world class inluencer you have got to work with SEO. Add some basic SEO by follwing this [tutorial](https://www.gatsbyjs.org/docs/add-seo-component/).
+- If you want to be a world class influencer you have got to work with SEO. Add some basic SEO by follwing this [tutorial](https://www.gatsbyjs.org/docs/add-seo-component/).
 
 - Build a footer component that can be used through out the site. 
 
-- Sourcing from the local filesystem. Right now we are using data from Contentful mainly. Lets query a JSON file using the filesystem plugin. I have prepared a file in the project. In the _data_ folder there is a json file _contact.json_. In order to be able to query it you have to add another dependency to project in the form of a gatsby [transformer](https://www.gatsbyjs.org/tutorial/part-six/) called [gatsby-transformer-json](https://www.gatsbyjs.org/packages/gatsby-transformer-json/). You also have to add it to your gatsby-config file. The last step is to set up new entry point for filesystem queries. Rights now we can only query files in the images folder. Retrieve the email and put it in your about page. Use the docs and the GraphQl playground in order to find out how the query should be structured.  
+- Sourcing from the local filesystem. Right now we are using data from Contentful mainly. Lets query a JSON file using the filesystem plugin. I have prepared a file in the project. In the _data_ folder there is a json file _contact.json_. In order to be able to query it you have to add another dependency to project in the form of a gatsby [transformer](https://www.gatsbyjs.org/tutorial/part-six/) called [gatsby-transformer-json](https://www.gatsbyjs.org/packages/gatsby-transformer-json/). You also have to add it to your gatsby-config file. The last step is to set up new entry point for filesystem queries. Right now we can only query files in the images folder. Retrieve the email and put it in your about page. Use the docs and the GraphQl playground in order to find out how the query should be structured.  
 
 - Change the image on the index site to something you like. If you want to learn more about the gatsby-image API read the [DOCS](https://www.gatsbyjs.org/packages/gatsby-image/). Try changing the image from _fluid_ to _fixed_.
 
