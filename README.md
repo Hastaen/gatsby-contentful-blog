@@ -13,7 +13,7 @@ Latest Node installed. It is a good idea to use NVM but not mandatory.
 
 `npm install`
 
-Create a free account at [Contentful](https://www.contentful.com/get-started/).
+Create a free account at [Contentful](https://www.contentful.com/get-started/). Be sure to use the developer setup!
 
 Then in your space create a content model called BlogPost. This field will need 4 fields to start with.
 
